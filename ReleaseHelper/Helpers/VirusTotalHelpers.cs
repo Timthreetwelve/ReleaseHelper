@@ -31,7 +31,7 @@ internal static class VirusTotalHelpers
         if (fileInfo is null)
             return string.Empty;
 
-        if (fileInfo!.Length > 1)
+        if (fileInfo!.Length > MaxBytes)
         {
             _log.Info($"{fileInfo.Name} is larger than {MaxBytes:N0} bytes. Using custom URL for upload.");
 
