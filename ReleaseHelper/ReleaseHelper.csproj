@@ -51,6 +51,17 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <!-- Generate BuildInfo.cs-->
+  <Target Name="BuildInfo" AfterTargets="UpdateAssemblyInfo">
+    <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName). Version is $(AssemblyVersion)" />
+    <PropertyGroup>
+      <PowerShellScript>-File "$(ProjectDir)PowerShell\GenBuildInfo.ps1"</PowerShellScript>
+      <Name>-assemblyName $(AssemblyName)</Name>
+      <Version>-assemblyVersion $(AssemblyVersion)</Version>
+    </PropertyGroup>
+    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version)" />
+  </Target>
+
   <!-- Publish to Zip file -->
   <Target Name="PublishZip" AfterTargets="Publish">
     <PropertyGroup>
