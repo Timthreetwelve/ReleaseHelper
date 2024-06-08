@@ -172,6 +172,14 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
     }
     #endregion Settings button - Relay command
 
+    #region View Log - Relay Command
+    [RelayCommand]
+    private static void ViewLog()
+    {
+        TextFileViewer.ViewTextFile(NLogHelpers.GetLogfileName());
+    }
+    #endregion View Log - Relay Command
+
     #region Check API key
     /// <summary>
     /// Check VT API key

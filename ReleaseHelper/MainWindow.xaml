@@ -8,12 +8,13 @@
         xmlns:helpers="clr-namespace:ReleaseHelper.Helpers"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:lang="clr-namespace:ReleaseHelper.Languages"
+        xmlns:local="clr-namespace:ReleaseHelper"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:ReleaseHelper.ViewModels"
         mc:Ignorable="d"
         MinWidth="450" MinHeight="360"
-        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        d:DataContext="{d:DesignInstance Type={x:Type viewmodels:MainViewModel}}"
         Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontSize="14"
         Style="{StaticResource MaterialDesignWindow}"
@@ -54,12 +55,43 @@
                    Text="{x:Static lang:Strings.Header_ReleaseHelper}" />
         <!--#endregion-->
 
-        <!--#region Settings button-->
+        <!--#region three dot button-->
         <Button Grid.Row="0" Grid.Column="1"
-                Margin="15,10"
+                Width="40"
+                Margin="15,10" Padding="0"
                 HorizontalAlignment="Right"
-                Command="{Binding OpenSettingsCommand}"
-                Style="{StaticResource SettingsButton}" />
+                Foreground="{DynamicResource MMaterialDesign.Brush.Foreground}"
+                Style="{StaticResource MaterialDesignFlatButton}">
+            <materialDesign:PopupBox Padding="0" HorizontalAlignment="Right"
+                                     Focusable="False"
+                                     PlacementMode="LeftAndAlignTopEdges"
+                                     Style="{DynamicResource MaterialDesignPopupBox}">
+                <materialDesign:PopupBox.ToggleContent>
+                    <materialDesign:PackIcon Width="45" Height="28"
+                                             Foreground="{Binding Foreground,
+                                                                  RelativeSource={RelativeSource FindAncestor,
+                                                                                                 AncestorType={x:Type local:MainWindow}}}"
+                                             Kind="DotsHorizontal" />
+                </materialDesign:PopupBox.ToggleContent>
+                <Border Padding="3"
+                        BorderBrush="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
+                        BorderThickness="2">
+                    <Grid Width="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Button Height="35"
+                                    Padding="15,1,15,22"
+                                    Command="{Binding ViewLogCommand}"
+                                    Content="View Log" />
+                            <Separator Margin="0" Padding="1" />
+                            <Button Height="35"
+                                    Padding="15,1,15,22"
+                                    Command="{Binding OpenSettingsCommand}"
+                                    Content="Settings" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </materialDesign:PopupBox>
+        </Button>
         <!--#endregion-->
 
         <!--#region Full path-->
@@ -93,7 +125,7 @@
         <!--#region SHA256 hash-->
         <Button Grid.Row="2"
                 Command="{Binding CopyToClipboardCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="Hash" />
@@ -111,7 +143,7 @@
         <!--#region Short filename-->
         <Button Grid.Row="3"
                 Command="{Binding CopyToClipboardCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="FileName" />
@@ -129,7 +161,7 @@
         <!--#region File size-->
         <Button Grid.Row="4"
                 Command="{Binding CopyToClipboardCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="Size" />
@@ -152,11 +184,11 @@
             <Button Width="Auto"
                     Padding="25,0"
                     Command="{Binding SubmitCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                     Content="{x:Static lang:Strings.Button_Submit}"
                     IsEnabled="{Binding FileName,
-                                        Converter={StaticResource submitConverter},
-                                        ConverterParameter={x:Static helpers:VirusTotalHelpers.VirusTotalKey}}"
+                                        ConverterParameter={x:Static helpers:VirusTotalHelpers.VirusTotalKey},
+                                        Converter={StaticResource submitConverter}}"
                     Style="{DynamicResource PlainOutlinedButton}" />
             <TextBlock VerticalAlignment="Center"
                        Foreground="Gray"
