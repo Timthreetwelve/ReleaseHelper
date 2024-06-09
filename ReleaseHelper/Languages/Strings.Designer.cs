@@ -97,7 +97,7 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit for Anaylsis.
+        ///   Looks up a localized string similar to Submit for Analysis.
         /// </summary>
         public static string Button_Submit {
             get {

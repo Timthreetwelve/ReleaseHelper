@@ -130,7 +130,7 @@
     <value>Edit Settings</value>
   </data>
   <data name="Button_Submit" xml:space="preserve">
-    <value>Submit for Anaylsis</value>
+    <value>Submit for Analysis</value>
   </data>
   <data name="Button_ViewLog" xml:space="preserve">
     <value>View Log</value>
