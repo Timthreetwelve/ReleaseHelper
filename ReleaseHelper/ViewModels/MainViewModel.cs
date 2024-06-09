@@ -160,9 +160,17 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
     [RelayCommand]
     public async Task Submit()
     {
-        VTMessage = await VirusTotalHelpers.UploadFileAsync(UploadFileInfo!);
+        if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(VTMessage);
+        }
+        else
+        {
+            VTMessage = await VirusTotalHelpers.UploadFileAsync(UploadFileInfo!);
+        }
     }
-    #endregion
+    #endregion Submit to VirusTotal
 
     #region Settings button - Relay command
     [RelayCommand]
