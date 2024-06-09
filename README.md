@@ -1,6 +1,8 @@
 # ReleaseHelper
 
-Release Helper is an app that I put together to help me get information about the files (exe installer or zip archive) that I plan to release here on GitHub.
+Release Helper is an app that I put together to help me get some of the information about the files (exe installer or zip archive) that I plan to release here on GitHub. The goal was to have information such as file size and SHA256 hash in one place and make it easy to copy and paste into release notes.
+
+Release Helper runs on Windows 10 build 19041 or greater and needs .NET 8 which can be downloaded [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
 ### Features
 - Simple user interface.
