@@ -129,4 +129,43 @@
   <data name="Header_ReleaseHelper" xml:space="preserve">
     <value>Asistente de liberación</value>
   </data>
+  <data name="Button_Settings" xml:space="preserve">
+    <value>Editar configuración</value>
+  </data>
+  <data name="Button_Submit" xml:space="preserve">
+    <value>Enviar para análisis</value>
+  </data>
+  <data name="Button_ViewLog" xml:space="preserve">
+    <value>Ver registro</value>
+  </data>
+  <data name="MsgText_ApiKeyInvalid" xml:space="preserve">
+    <value>Falta la clave API de VirusTotal o tiene una longitud incorrecta.</value>
+  </data>
+  <data name="MsgText_ApiKeyOK" xml:space="preserve">
+    <value>Se ha encontrado la clave API de VirusTotal.</value>
+  </data>
+  <data name="MsgText_ErrorCaption" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="MsgText_ErrorGeneral" xml:space="preserve">
+    <value>Se ha producido un error.</value>
+  </data>
+  <data name="MsgText_ErrorOpeningFile" xml:space="preserve">
+    <value>Error al abrir {0}</value>
+  </data>
+  <data name="MsgText_ErrorReadingFile" xml:space="preserve">
+    <value>Error de lectura {0}</value>
+  </data>
+  <data name="MsgText_FileNotFound" xml:space="preserve">
+    <value>Archivo no encontrado.</value>
+  </data>
+  <data name="MsgText_FileSubmitted" xml:space="preserve">
+    <value>Fichero enviado a VirrusTotal para su análisis.</value>
+  </data>
+  <data name="MsgText_SeeLogFile" xml:space="preserve">
+    <value>Consulte el archivo de registro para obtener más información.</value>
+  </data>
+  <data name="MsgText_WindowTitleAdministrator" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
 </root>

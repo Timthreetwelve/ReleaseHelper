@@ -129,4 +129,43 @@
   <data name="Header_ReleaseHelper" xml:space="preserve">
     <value>Helfer veröffentlichen</value>
   </data>
+  <data name="Button_Settings" xml:space="preserve">
+    <value>Einstellungen bearbeiten</value>
+  </data>
+  <data name="Button_Submit" xml:space="preserve">
+    <value>Zur Analyse einreichen</value>
+  </data>
+  <data name="Button_ViewLog" xml:space="preserve">
+    <value>Ansicht Log</value>
+  </data>
+  <data name="MsgText_ApiKeyInvalid" xml:space="preserve">
+    <value>VirusTotal API-Schlüssel fehlt oder hat eine falsche Länge.</value>
+  </data>
+  <data name="MsgText_ApiKeyOK" xml:space="preserve">
+    <value>VirusTotal API-Schlüssel wurde gefunden.</value>
+  </data>
+  <data name="MsgText_ErrorCaption" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="MsgText_ErrorGeneral" xml:space="preserve">
+    <value>Es ist ein Fehler aufgetreten.</value>
+  </data>
+  <data name="MsgText_ErrorOpeningFile" xml:space="preserve">
+    <value>Fehler beim Öffnen {0}</value>
+  </data>
+  <data name="MsgText_ErrorReadingFile" xml:space="preserve">
+    <value>Fehler beim Lesen {0}</value>
+  </data>
+  <data name="MsgText_FileNotFound" xml:space="preserve">
+    <value>Datei nicht gefunden.</value>
+  </data>
+  <data name="MsgText_FileSubmitted" xml:space="preserve">
+    <value>Die Datei wurde an VirrusTotal zur Analyse übermittelt.</value>
+  </data>
+  <data name="MsgText_SeeLogFile" xml:space="preserve">
+    <value>Weitere Informationen finden Sie in der Protokolldatei.</value>
+  </data>
+  <data name="MsgText_WindowTitleAdministrator" xml:space="preserve">
+    <value>Verwalter</value>
+  </data>
 </root>
