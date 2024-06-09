@@ -126,17 +126,23 @@
   <data name="Button_Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
+  <data name="Button_Settings" xml:space="preserve">
+    <value>Edit Settings</value>
+  </data>
   <data name="Button_Submit" xml:space="preserve">
     <value>Submit for Anaylsis</value>
+  </data>
+  <data name="Button_ViewLog" xml:space="preserve">
+    <value>View Log</value>
   </data>
   <data name="Header_ReleaseHelper" xml:space="preserve">
     <value>Release Helper</value>
   </data>
   <data name="MsgText_ApiKeyInvalid" xml:space="preserve">
-    <value>VirusTotal API key is missing or wrong length</value>
+    <value>VirusTotal API key is missing or wrong length.</value>
   </data>
   <data name="MsgText_ApiKeyOK" xml:space="preserve">
-    <value>VirusTotal API key was found</value>
+    <value>VirusTotal API key was found.</value>
   </data>
   <data name="MsgText_ErrorCaption" xml:space="preserve">
     <value>ERROR</value>
@@ -154,7 +160,7 @@
     <value>File not found.</value>
   </data>
   <data name="MsgText_FileSubmitted" xml:space="preserve">
-    <value>File submitted to VirrusTotal for analysis</value>
+    <value>File submitted to VirrusTotal for analysis.</value>
   </data>
   <data name="MsgText_SeeLogFile" xml:space="preserve">
     <value>See the log file for more information.</value>

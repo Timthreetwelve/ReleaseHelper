@@ -88,11 +88,29 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Settings.
+        /// </summary>
+        public static string Button_Settings {
+            get {
+                return ResourceManager.GetString("Button_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit for Anaylsis.
         /// </summary>
         public static string Button_Submit {
             get {
                 return ResourceManager.GetString("Button_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Log.
+        /// </summary>
+        public static string Button_ViewLog {
+            get {
+                return ResourceManager.GetString("Button_ViewLog", resourceCulture);
             }
         }
         
@@ -106,7 +124,7 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VirusTotal API key is missing or wrong length.
+        ///   Looks up a localized string similar to VirusTotal API key is missing or wrong length..
         /// </summary>
         public static string MsgText_ApiKeyInvalid {
             get {
@@ -115,7 +133,7 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VirusTotal API key was found.
+        ///   Looks up a localized string similar to VirusTotal API key was found..
         /// </summary>
         public static string MsgText_ApiKeyOK {
             get {
@@ -169,7 +187,7 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File submitted to VirrusTotal for analysis.
+        ///   Looks up a localized string similar to File submitted to VirrusTotal for analysis..
         /// </summary>
         public static string MsgText_FileSubmitted {
             get {

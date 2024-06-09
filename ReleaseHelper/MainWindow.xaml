@@ -81,12 +81,12 @@
                             <Button Height="35"
                                     Padding="15,1,15,22"
                                     Command="{Binding ViewLogCommand}"
-                                    Content="View Log" />
+                                    Content="{x:Static lang:Strings.Button_ViewLog}" />
                             <Separator Margin="0" Padding="1" />
                             <Button Height="35"
                                     Padding="15,1,15,22"
                                     Command="{Binding OpenSettingsCommand}"
-                                    Content="Settings" />
+                                    Content="{x:Static lang:Strings.Button_Settings}" />
                         </StackPanel>
                     </Grid>
                 </Border>
