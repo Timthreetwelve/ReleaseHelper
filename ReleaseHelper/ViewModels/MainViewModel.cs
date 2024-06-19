@@ -250,9 +250,9 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
             FilePath = UploadFileInfo!.FullName;
             FileSize = FormatHelpers.GetFileSize(UploadFileInfo);
             FileName = UploadFileInfo.Name;
-            _log.Debug($"File path is: {FilePath}");
-            _log.Debug($"File size is: {FileSize}");
-            _log.Debug($"File name is: {FileName}");
+            _log.Info($"File path is: {FilePath}");
+            _log.Info($"File size is: {FileSize}");
+            _log.Info($"File name is: {FileName}");
             CalculateHash();
         }
         else
@@ -286,7 +286,7 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
     {
         FileHash = e.Result!.ToString();
         ProgressAnimation = false;
-        _log.Debug($"SHA256 hash is: {FileHash}");
+        _log.Info($"SHA256 hash is: {FileHash}");
     }
     #endregion Calculate SHA256 on background worker
 
