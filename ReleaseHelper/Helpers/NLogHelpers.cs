@@ -39,8 +39,11 @@ internal static class NLogHelpers
             // message and footer layouts
             Footer = "${date:format=yyyy/MM/dd HH\\:mm\\:ss}",
             Layout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss} " +
-                         "${pad:padding=-5:inner=${level:uppercase=true}}  " +
-                         "${message}${onexception:${newline}${exception:format=tostring}}"
+                         "${pad:padding=-5:inner=${level:uppercase=true}} " +
+                         "${pad:padding=6:inner=${processid}} " +
+                         "${message}${onexception:${newline}${exception:format=tostring}}",
+
+            KeepFileOpen = false
         };
 
         // add the _log file target
