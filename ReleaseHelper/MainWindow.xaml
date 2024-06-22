@@ -31,14 +31,14 @@
     <Grid>
         <!--#region Row definitions-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="45" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="5" />
             <RowDefinition Height="Auto" MinHeight="45" />
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="10" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -49,14 +49,17 @@
         <!--#region Heading-->
         <TextBlock Grid.Row="0" Grid.Column="0"
                    Grid.ColumnSpan="2"
-                   Margin="10" HorizontalAlignment="Center"
+                   Margin="5" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    FontSize="20"
                    Text="{x:Static lang:Strings.Header_ReleaseHelper}" />
         <!--#endregion-->
 
+        <!--#region icon buttons at top right -->
         <StackPanel Grid.Row="0" Grid.Column="1"
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">
+            <!--#region Clear button -->
             <Button Width="35"
                     Margin="0" Padding="0"
                     HorizontalAlignment="Left"
@@ -69,6 +72,7 @@
                                          Kind="Eraser" />
 
             </Button>
+            <!--#endregion-->
             <!--#region three dot button-->
             <Button Width="35"
                     Margin="2,10,22,10" Padding="0"
@@ -105,15 +109,25 @@
                 </materialDesign:PopupBox>
             </Button>
             <!--#endregion-->
-
         </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Progress bar-->
+        <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"
+                     Height="1"
+                     Margin="20,0" VerticalAlignment="Top"
+                     Background="{DynamicResource MaterialDesign.Brush.Background}"
+                     BorderBrush="{DynamicResource MaterialDesign.Brush.Background}"
+                     Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                     IsIndeterminate="{Binding ProgressAnimation}" />
+        <!--#endregion-->
 
         <!--#region Full path-->
-        <Button Grid.Row="1"
+        <Button Grid.Row="2"
                 Command="{Binding BrowseForFileCommand}"
                 Content="{x:Static lang:Strings.Button_Browse}"
                 Style="{DynamicResource PlainOutlinedButton}" />
-        <TextBox Grid.Row="1" Grid.Column="1"
+        <TextBox Grid.Row="2" Grid.Column="1"
                  MinHeight="33"
                  Margin="0,0,20,0" Padding="5,0"
                  VerticalAlignment="Center"
@@ -137,13 +151,13 @@
         <!--#endregion-->
 
         <!--#region SHA256 hash-->
-        <Button Grid.Row="2"
+        <Button Grid.Row="3"
                 Command="{Binding CopyToClipboardCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="Hash" />
-        <TextBox Grid.Row="2" Grid.Column="1"
+        <TextBox Grid.Row="3" Grid.Column="1"
                  Height="33"
                  Margin="0,0,20,0" Padding="5,0"
                  VerticalContentAlignment="Center"
@@ -155,13 +169,13 @@
         <!--#endregion-->
 
         <!--#region Short filename-->
-        <Button Grid.Row="3"
+        <Button Grid.Row="4"
                 Command="{Binding CopyToClipboardCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="FileName" />
-        <TextBox Grid.Row="3" Grid.Column="1"
+        <TextBox Grid.Row="4" Grid.Column="1"
                  Height="33"
                  Margin="0,0,20,0" Padding="5,0"
                  VerticalContentAlignment="Center"
@@ -173,13 +187,13 @@
         <!--#endregion-->
 
         <!--#region File size-->
-        <Button Grid.Row="4"
+        <Button Grid.Row="5"
                 Command="{Binding CopyToClipboardCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                 Content="{x:Static lang:Strings.Button_Copy}"
                 Style="{DynamicResource PlainOutlinedButton}"
                 Tag="Size" />
-        <TextBox Grid.Row="4" Grid.Column="1"
+        <TextBox Grid.Row="5" Grid.Column="1"
                  Height="33" MinWidth="100"
                  Margin="0,0,0,0" Padding="5,0"
                  HorizontalAlignment="Left"
@@ -192,7 +206,7 @@
         <!--#endregion-->
 
         <!--#region Submit button-->
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2"
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2"
                     Width="Auto"
                     Orientation="Horizontal">
             <Button Width="Auto"
@@ -208,15 +222,6 @@
                        Foreground="Gray"
                        Text="{Binding VTMessage}" />
         </StackPanel>
-        <!--#endregion-->
-
-        <!--#region Progress bar-->
-        <ProgressBar Grid.Row="7" Grid.ColumnSpan="2"
-                     Margin="15,0" VerticalAlignment="Top"
-                     Background="{DynamicResource MaterialDesign.Brush.Background}"
-                     BorderBrush="{DynamicResource MaterialDesign.Brush.Background}"
-                     Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
-                     IsIndeterminate="{Binding ProgressAnimation}" />
         <!--#endregion-->
     </Grid>
 </Window>
