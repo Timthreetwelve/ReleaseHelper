@@ -13,7 +13,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:ReleaseHelper.ViewModels"
         mc:Ignorable="d"
-        MinWidth="450" MinHeight="360"
+        MinWidth="450" MinHeight="310"
         d:DataContext="{d:DesignInstance Type={x:Type viewmodels:MainViewModel}}"
         Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontSize="14"
@@ -37,8 +37,7 @@
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
-            <RowDefinition Height="45" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -55,44 +54,59 @@
                    Text="{x:Static lang:Strings.Header_ReleaseHelper}" />
         <!--#endregion-->
 
-        <!--#region three dot button-->
-        <Button Grid.Row="0" Grid.Column="1"
-                Width="40"
-                Margin="15,10" Padding="0"
-                HorizontalAlignment="Right"
-                Foreground="{DynamicResource MMaterialDesign.Brush.Foreground}"
-                Style="{StaticResource MaterialDesignFlatButton}">
-            <materialDesign:PopupBox Padding="0" HorizontalAlignment="Right"
-                                     Focusable="False"
-                                     PlacementMode="LeftAndAlignTopEdges"
-                                     Style="{DynamicResource MaterialDesignPopupBox}">
-                <materialDesign:PopupBox.ToggleContent>
-                    <materialDesign:PackIcon Width="45" Height="28"
-                                             Foreground="{Binding Foreground,
-                                                                  RelativeSource={RelativeSource FindAncestor,
-                                                                                                 AncestorType={x:Type local:MainWindow}}}"
-                                             Kind="DotsHorizontal" />
-                </materialDesign:PopupBox.ToggleContent>
-                <Border Padding="3"
-                        BorderBrush="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
-                        BorderThickness="2">
-                    <Grid Width="Auto">
-                        <StackPanel Orientation="Vertical">
-                            <Button Height="35"
-                                    Padding="15,1,15,22"
-                                    Command="{Binding ViewLogCommand}"
-                                    Content="{x:Static lang:Strings.Button_ViewLog}" />
-                            <Separator Margin="0" Padding="1" />
-                            <Button Height="35"
-                                    Padding="15,1,15,22"
-                                    Command="{Binding OpenSettingsCommand}"
-                                    Content="{x:Static lang:Strings.Button_Settings}" />
-                        </StackPanel>
-                    </Grid>
-                </Border>
-            </materialDesign:PopupBox>
-        </Button>
-        <!--#endregion-->
+        <StackPanel Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <Button Width="35"
+                    Margin="0" Padding="0"
+                    HorizontalAlignment="Left"
+                    Command="{Binding ClearCommand}"
+                    Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="Clear all">
+                <materialDesign:PackIcon Width="28" Height="28"
+                                         Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                                         Kind="Eraser" />
+
+            </Button>
+            <!--#region three dot button-->
+            <Button Width="35"
+                    Margin="2,10,22,10" Padding="0"
+                    HorizontalAlignment="Right"
+                    Foreground="{DynamicResource MMaterialDesign.Brush.Foreground}"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="Additional actions">
+                <materialDesign:PopupBox Padding="0" HorizontalAlignment="Right"
+                                         Focusable="False"
+                                         PlacementMode="LeftAndAlignTopEdges"
+                                         Style="{DynamicResource MaterialDesignPopupBox}">
+                    <materialDesign:PopupBox.ToggleContent>
+                        <materialDesign:PackIcon Width="45" Height="28"
+                                                 Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                                                 Kind="DotsHorizontal" />
+                    </materialDesign:PopupBox.ToggleContent>
+                    <Border Padding="3"
+                            BorderBrush="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
+                            BorderThickness="2">
+                        <Grid Width="Auto">
+                            <StackPanel Orientation="Vertical">
+                                <Button Height="35"
+                                        Padding="15,1,15,22"
+                                        Command="{Binding ViewLogCommand}"
+                                        Content="{x:Static lang:Strings.Button_ViewLog}" />
+                                <Separator Margin="0" Padding="1" />
+                                <Button Height="35"
+                                        Padding="15,1,15,22"
+                                        Command="{Binding OpenSettingsCommand}"
+                                        Content="{x:Static lang:Strings.Button_Settings}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </materialDesign:PopupBox>
+            </Button>
+            <!--#endregion-->
+
+        </StackPanel>
 
         <!--#region Full path-->
         <Button Grid.Row="1"
@@ -178,7 +192,7 @@
         <!--#endregion-->
 
         <!--#region Submit button-->
-        <StackPanel Grid.Row="6" Grid.ColumnSpan="2"
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2"
                     Width="Auto"
                     Orientation="Horizontal">
             <Button Width="Auto"
@@ -196,15 +210,8 @@
         </StackPanel>
         <!--#endregion-->
 
-        <!--#region Clear button-->
-        <Button Grid.Row="5"
-                Command="{Binding ClearCommand}"
-                Content="{x:Static lang:Strings.Button_Clear}"
-                Style="{DynamicResource PlainOutlinedButton}" />
-        <!--#endregion-->
-
         <!--#region Progress bar-->
-        <ProgressBar Grid.Row="8" Grid.ColumnSpan="2"
+        <ProgressBar Grid.Row="7" Grid.ColumnSpan="2"
                      Margin="15,0" VerticalAlignment="Top"
                      Background="{DynamicResource MaterialDesign.Brush.Background}"
                      BorderBrush="{DynamicResource MaterialDesign.Brush.Background}"
