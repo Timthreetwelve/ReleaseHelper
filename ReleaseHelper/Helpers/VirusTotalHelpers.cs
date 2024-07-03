@@ -102,7 +102,8 @@ internal static class VirusTotalHelpers
                     _ = element.TryGetProperty("id", out JsonElement vt_id);
                     _log.Info($"Type: {vt_type}");
                     _log.Info($"ID:   {vt_id}");
-                    return $"ID:  {vt_id}";
+                    string now = DateTime.Now.ToString("HH:mm");
+                    return $"Submitted for analysis at {now}";
                 }
                 else
                 {
