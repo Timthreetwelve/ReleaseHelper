@@ -67,7 +67,7 @@
                     Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                     Style="{StaticResource MaterialDesignFlatButton}"
                     ToolTip="Clear all">
-                <materialDesign:PackIcon Width="28" Height="28"
+                <materialDesign:PackIcon Width="24" Height="24"
                                          Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                          Kind="Eraser" />
 
