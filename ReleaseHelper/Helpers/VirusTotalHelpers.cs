@@ -103,7 +103,14 @@ internal static class VirusTotalHelpers
                     _log.Info($"Type: {vt_type}");
                     _log.Info($"ID:   {vt_id}");
                     string now = DateTime.Now.ToString("HH:mm");
-                    return $"Submitted for analysis at {now}";
+                    if (vt_type.ToString().Equals("analysis", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return $"Submitted for analysis at {now}";
+                    }
+                    else
+                    {
+                        return $"VirusTotal returned {vt_type}";
+                    }
                 }
                 else
                 {
