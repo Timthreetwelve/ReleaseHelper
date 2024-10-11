@@ -25,6 +25,7 @@
     <PackageReference Include="gong-wpf-dragdrop" Version="3.2.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.143" PrivateAssets="all" />
     <PackageReference Include="NLog" Version="5.3.4" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
   </ItemGroup>
@@ -45,32 +46,24 @@
   </ItemGroup>
 
   <!-- Generate BuildInfo.cs-->
-  <Target Name="BuildInfo" AfterTargets="UpdateAssemblyInfo">
-    <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName). Version is $(AssemblyVersion)" />
+  <Target Name="BuildInfo" AfterTargets="BeforeBuild">
+    <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName)." />
     <PropertyGroup>
       <PowerShellScript>-File "$(ProjectDir)PowerShell\GenBuildInfo.ps1"</PowerShellScript>
       <Name>-assemblyName $(AssemblyName)</Name>
-      <Version>-assemblyVersion $(AssemblyVersion)</Version>
     </PropertyGroup>
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version)" />
+    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name)" />
   </Target>
 
-  <!-- Publish to Zip file -->
-  <Target Name="PublishZip" AfterTargets="Publish">
-    <PropertyGroup>
-      <PowerShellScript>-File "V:\Source\Repos\PublishZip\PubZipEx.ps1"</PowerShellScript>
-      <Name>-name $(AssemblyName)</Name>
-      <Version>-version $(AssemblyVersion)</Version>
-      <Path>-path "$(ProjectDir)"</Path>
-      <PublishFolder>-pubDir $(PublishDir)</PublishFolder>
-    </PropertyGroup>
-
-    <!-- This is the framework dependent version -->
-    <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
-      <PubType>-pubType x64x86</PubType>
-    </PropertyGroup>
-
-    <!-- Execute the PowerShell script -->
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(PubType) $(PublishFolder) $(Path)" />
+  <!-- Build complete message -->
+  <Target Name="VersionMessage" AfterTargets="AfterBuild">
+    <Message Importance="high" Text="Build complete for $(AssemblyName). Assembly Version is $(AssemblyVersion)." />
   </Target>
+
+  <!-- Remove obj folder after Clean -->
+  <Target Name="SpicNSpan" AfterTargets="AfterClean">
+    <Message Importance="high" Text="obj folder deleted." />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
+  
 </Project>
