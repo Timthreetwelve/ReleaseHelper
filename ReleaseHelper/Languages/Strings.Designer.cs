@@ -88,6 +88,15 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go to VirusTotal.
+        /// </summary>
+        public static string Button_OpenVirusTotal {
+            get {
+                return ResourceManager.GetString("Button_OpenVirusTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Settings.
         /// </summary>
         public static string Button_Settings {
@@ -187,7 +196,7 @@ namespace ReleaseHelper.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File submitted to VirrusTotal for analysis..
+        ///   Looks up a localized string similar to File submitted to VirusTotal for analysis..
         /// </summary>
         public static string MsgText_FileSubmitted {
             get {

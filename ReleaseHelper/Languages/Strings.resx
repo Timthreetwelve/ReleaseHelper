@@ -160,12 +160,15 @@
     <value>File not found.</value>
   </data>
   <data name="MsgText_FileSubmitted" xml:space="preserve">
-    <value>File submitted to VirrusTotal for analysis.</value>
+    <value>File submitted to VirusTotal for analysis.</value>
   </data>
   <data name="MsgText_SeeLogFile" xml:space="preserve">
     <value>See the log file for more information.</value>
   </data>
   <data name="MsgText_WindowTitleAdministrator" xml:space="preserve">
     <value>Administrator</value>
+  </data>
+  <data name="Button_OpenVirusTotal" xml:space="preserve">
+    <value>Go to VirusTotal</value>
   </data>
 </root>

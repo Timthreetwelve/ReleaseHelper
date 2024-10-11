@@ -126,9 +126,6 @@
   <data name="Button_Copy" xml:space="preserve">
     <value>Copia</value>
   </data>
-  <data name="Header_ReleaseHelper" xml:space="preserve">
-    <value>Asistente de liberación</value>
-  </data>
   <data name="Button_Settings" xml:space="preserve">
     <value>Editar configuración</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="Button_ViewLog" xml:space="preserve">
     <value>Ver registro</value>
+  </data>
+  <data name="Header_ReleaseHelper" xml:space="preserve">
+    <value>Asistente de liberación</value>
   </data>
   <data name="MsgText_ApiKeyInvalid" xml:space="preserve">
     <value>Falta la clave API de VirusTotal o tiene una longitud incorrecta.</value>
@@ -160,12 +160,15 @@
     <value>Archivo no encontrado.</value>
   </data>
   <data name="MsgText_FileSubmitted" xml:space="preserve">
-    <value>Fichero enviado a VirrusTotal para su análisis.</value>
+    <value>Fichero enviado a VirusTotal para su análisis.</value>
   </data>
   <data name="MsgText_SeeLogFile" xml:space="preserve">
     <value>Consulte el archivo de registro para obtener más información.</value>
   </data>
   <data name="MsgText_WindowTitleAdministrator" xml:space="preserve">
     <value>Administrador</value>
+  </data>
+  <data name="Button_OpenVirusTotal" xml:space="preserve">
+    <value>Ir a VirusTotal</value>
   </data>
 </root>

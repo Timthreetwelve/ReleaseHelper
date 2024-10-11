@@ -55,11 +55,11 @@
                    Text="{x:Static lang:Strings.Header_ReleaseHelper}" />
         <!--#endregion-->
 
-        <!--#region icon buttons at top right -->
+        <!--#region icon buttons at top right-->
         <StackPanel Grid.Row="0" Grid.Column="1"
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">
-            <!--#region Clear button -->
+            <!--#region Clear button-->
             <Button Width="35"
                     Margin="0" Padding="0"
                     HorizontalAlignment="Left"
@@ -222,6 +222,17 @@
                        Foreground="Gray"
                        Text="{Binding VTMessage}" />
         </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Visit VT button -->
+        <Button Grid.Row="6" Grid.Column="2"
+
+                Padding="25,0"
+                HorizontalAlignment="Right"
+                Command="{Binding VisitVTCommand}"
+                Content="{x:Static lang:Strings.Button_OpenVirusTotal}"
+                Width="Auto"
+                Style="{DynamicResource PlainOutlinedButton}" />
         <!--#endregion-->
     </Grid>
 </Window>

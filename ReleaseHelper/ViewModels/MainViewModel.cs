@@ -59,6 +59,11 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
     /// </summary>
     [ObservableProperty]
     private string? _vTMessage;
+
+    /// <summary>
+    /// URL for viewing VirusTotal result.
+    /// </summary>
+    public static string? VirusTotalUrl { get; } = "https://www.virustotal.com/gui/";
     #endregion Properties
 
     #region Browse for file - Relay command
@@ -171,6 +176,24 @@ internal partial class MainViewModel : ObservableObject, IDropTarget
         }
     }
     #endregion Submit to VirusTotal
+
+    #region Navigate to VirusTotal.com
+    [RelayCommand]
+    public void VisitVT()
+    {
+        string? url = VirusTotalUrl;
+        if (!string.IsNullOrEmpty(FileHash) && FileHash.Length == 64)
+        {
+            url += "file/";
+            url += FileHash;
+        }
+
+        Process p = new();
+        p.StartInfo.FileName = url;
+        p.StartInfo.UseShellExecute = true;
+        p.Start();
+    }
+    #endregion Navigate to VirusTotal.com
 
     #region Settings button - Relay command
     [RelayCommand]

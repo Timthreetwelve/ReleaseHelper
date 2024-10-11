@@ -126,9 +126,6 @@
   <data name="Button_Copy" xml:space="preserve">
     <value>Kopieren</value>
   </data>
-  <data name="Header_ReleaseHelper" xml:space="preserve">
-    <value>Helfer veröffentlichen</value>
-  </data>
   <data name="Button_Settings" xml:space="preserve">
     <value>Einstellungen bearbeiten</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="Button_ViewLog" xml:space="preserve">
     <value>Ansicht Log</value>
+  </data>
+  <data name="Header_ReleaseHelper" xml:space="preserve">
+    <value>Helfer veröffentlichen</value>
   </data>
   <data name="MsgText_ApiKeyInvalid" xml:space="preserve">
     <value>VirusTotal API-Schlüssel fehlt oder hat eine falsche Länge.</value>
@@ -160,12 +160,15 @@
     <value>Datei nicht gefunden.</value>
   </data>
   <data name="MsgText_FileSubmitted" xml:space="preserve">
-    <value>Die Datei wurde an VirrusTotal zur Analyse übermittelt.</value>
+    <value>Die Datei wurde an VirusTotal zur Analyse übermittelt.</value>
   </data>
   <data name="MsgText_SeeLogFile" xml:space="preserve">
     <value>Weitere Informationen finden Sie in der Protokolldatei.</value>
   </data>
   <data name="MsgText_WindowTitleAdministrator" xml:space="preserve">
     <value>Verwalter</value>
+  </data>
+  <data name="Button_OpenVirusTotal" xml:space="preserve">
+    <value>Gehen Sie zu VirusTotal</value>
   </data>
 </root>
