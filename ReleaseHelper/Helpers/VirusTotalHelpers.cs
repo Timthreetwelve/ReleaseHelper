@@ -1,4 +1,4 @@
-﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace ReleaseHelper.Helpers;
 
@@ -16,7 +16,7 @@ internal static class VirusTotalHelpers
     public static string UploadURL { get; } = "https://www.virustotal.com/api/v3/files/upload_url";
 
     /// <summary>
-    /// My personal VT API key. Needed to be moved to a settings file.
+    /// My personal VT API key.
     /// </summary>
     public static string? VirusTotalKey { get; } = UserSettings.Setting!.ApiKey!;
     #endregion Properties
