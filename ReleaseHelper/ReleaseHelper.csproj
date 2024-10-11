@@ -47,7 +47,7 @@
 
   <!-- Generate BuildInfo.cs-->
   <Target Name="BuildInfo" AfterTargets="BeforeBuild">
-    <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName)." />
+    <Message Importance="high" Text="Generating BuildInfo for $(AssemblyName)." />
     <PropertyGroup>
       <PowerShellScript>-File "$(ProjectDir)PowerShell\GenBuildInfo.ps1"</PowerShellScript>
       <Name>-assemblyName $(AssemblyName)</Name>
